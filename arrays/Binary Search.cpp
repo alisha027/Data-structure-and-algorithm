@@ -60,9 +60,9 @@
 #include<iostream>
 using namespace std;
 int search(int A[], int N, int target){
-    for(int i=0;i<N;i++){
-        if(A[i]==target){
-            return i;
+    for(int j=0;j<N;j++){
+        if(A[j]==target){
+            return j;
         }
     }
     return -1;
