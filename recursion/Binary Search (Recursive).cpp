@@ -27,3 +27,23 @@ Sample Output:
 3 
 
 Hint : Use helper function to solve this question.
+int binarySearchhelp(int arr[],int st,int en,int el){
+    if(st>en){
+        return -1;
+    }
+
+        int mid = (st+en)/2;
+        if(arr[mid] == el){
+            return mid;
+        }
+        else if(arr[mid]>el){
+            return binarySearchhelp(arr,st,mid-1,el);
+        }
+        else{
+            return binarySearchhelp(arr,mid+1,en,el);
+        }
+
+}
+int binarySearch(int arr[],int n,int x){
+    return binarySearchhelp(arr,0,n-1,x);
+}
