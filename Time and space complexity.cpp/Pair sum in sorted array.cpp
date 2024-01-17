@@ -32,3 +32,26 @@ Sample Input 2:
 
 Sample Output 2:
 0
+
+int pairSum(int arr[], int n , int num)
+{
+     int count = 0;
+    int left = 0;
+    int right = n - 1;
+
+    while (left < right) {
+        int currentSum = arr[left] + arr[right];
+
+        if (currentSum == num) {
+            count++;
+            left++;
+            right--;
+        } else if (currentSum < num) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+
+    return count;
+}
