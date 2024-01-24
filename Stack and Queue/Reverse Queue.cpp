@@ -39,3 +39,17 @@ Sample Input 2:
 Sample Output 2:
 10 1 15 8 2 
 30 20 10 
+
+ #include<queue>
+void reverseQueue(queue<int> &input) {
+	 if (q.empty()) {
+        return;
+    }
+
+    int frontElement = q.front();
+    q.pop();
+    
+    reverseQueue(q);
+    
+    q.push(frontElement);
+}
